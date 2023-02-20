@@ -1,1 +1,3 @@
-React App project
+React Todo App
+
+Created with CRA

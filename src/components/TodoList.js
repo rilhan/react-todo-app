@@ -7,7 +7,7 @@ function TodoList({todoList,setTodoList,currentFilter}) {
     switch(currentFilter) {
         case "completed":
             newList = todoList.filter(item => item.status === true); break;
-        case "uncompleted":
+        case "incompleted":
             newList = todoList.filter(item => item.status === false); break;
         default:
             newList = todoList;

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 0;
 }
 
 body {
@@ -48,7 +49,7 @@ form button:hover {
 }
 
 .todo-list {
-  min-width: 30%;
+  min-width: 40%;
   list-style: none;
 }
 
@@ -97,7 +98,6 @@ form button:hover {
   opacity: 0.5;
 }
 
-/*CUSTOM SELECTOR */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -107,9 +107,9 @@ select {
   box-shadow: none;
   border: 0 !important;
   background-image: none;
+  background: white;
 }
 
-/* Custom Select */
 .select {
   margin: 1rem;
   position: relative;
@@ -123,7 +123,6 @@ select {
   width: 12rem;
 }
 
-/* Arrow */
 .select::after {
   content: "\25BC";
   position: absolute;
@@ -133,4 +132,29 @@ select {
   background: #ff6f47;
   cursor: pointer;
   pointer-events: none;
+}
+
+@media only screen and (max-width: 700px) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form input, form button {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .select {
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .todo {
+    font-size: 1.2rem;
+  }
+
+  .filter-todo, .select::after {
+    padding: 0.5rem;
+  }
 }

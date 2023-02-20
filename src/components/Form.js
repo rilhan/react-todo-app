@@ -1,7 +1,7 @@
 import React from "react";
 
-function Form({inputText, setInputText, todoList, setTodoList, setCurrFilter}) {
-    
+function Form({ inputText, setInputText, todoList, setTodoList, setCurrFilter }) {
+
     function inputTextHandler(e) {
         setInputText(e.target.value);
     };
@@ -11,14 +11,14 @@ function Form({inputText, setInputText, todoList, setTodoList, setCurrFilter}) {
             if (todoList.length === 0) {
                 return 0;
             } else {
-                return todoList[todoList.length-1].id+1;
+                return todoList[todoList.length - 1].id + 1;
             };
         };
         e.preventDefault();
         setTodoList([
             ...todoList,
-            {id: maxId(), task: inputText, status: false }
-        ]);        
+            { id: maxId(), task: inputText, status: false }
+        ]);
         setInputText("");
     };
 
@@ -28,15 +28,17 @@ function Form({inputText, setInputText, todoList, setTodoList, setCurrFilter}) {
 
     return (
         <form>
-            <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
-            <button onClick={todoListHandler} className="todo-button" type="submit">
-                <i className="fas fa-plus-square"></i>
-            </button>
+            <div className="form-container">
+                <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
+                <button onClick={todoListHandler} className="todo-button" type="submit">
+                    <i className="fas fa-plus-square"></i>
+                </button>
+            </div>
             <div className="select">
                 <select onClick={setCurrFilterState} name="todos" className="filter-todo">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
-                    <option value="uncompleted">Uncompleted</option>
+                    <option value="incompleted">Incompleted</option>
                 </select>
             </div>
         </form>
